@@ -13,10 +13,17 @@
 <body>
     <main>
         <h1>Ajouter un article</h1>
-        <form action="add_article.php" method="GET">
+        <form action="add_article.php" method="POST">
             <div>
                 <label for="title">Titre de l'article</label>
                 <input type="text" name="title" placeholder="Entrer votre texte ...">
+            </div>
+            <div>
+                <label for="content">Texte de votre article</label>
+                <textarea name="content" id="content"></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Ajouter">
             </div>
 
         </form>
