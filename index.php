@@ -38,8 +38,7 @@ $connexion = null;
         ?>
                 <section>
                     <h2><?= $article['title'] ?>
-                <span hx-delete="del_article.php?id=<?= $article['id'] ?>"
-                hx-confirm="Etes vous certain de supprimer cet article !?"
+                <span hx-delete="del_article.php?id=<?= $article['id'] ?>"              hx-confirm="Etes vous certain de supprimer cet article !?"
                 hx-swap="outerHTML"
                 class="delete">X</span>
                 </h2>
