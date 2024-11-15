@@ -24,8 +24,13 @@ $connexion = null;
     <main>
         
     <header>
-        <a href="add_form.php">Ajouter un article</a>
+        <a href="add_form.php"
+        hx-get="add_form.php"
+        hx-target="#form_ajout_article"
+        hx-swap="outerHTML"
+        >Ajouter un article</a>
     </header>
+    <section id="form_ajout_article"></section>
     
         <?php
             foreach($articles as $article):
