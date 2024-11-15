@@ -1,7 +1,7 @@
 <?php
 $connexion = new PDO("mysql:host=localhost;dbname=blog_db", "root", "");
 
-$result = $connexion->query('SELECT * FROM article');
+$result = $connexion->query('SELECT * FROM article ORDER BY id DESC');
 
 $articles = [];
 
