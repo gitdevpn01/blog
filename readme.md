@@ -1,6 +1,6 @@
 # Blog en vanilla php
 
-créer une base de donnée **blog_db** avec une table _article_.
+Créer une base de données **blog_db** avec une table _article_.
 
 La page **index.php** liste tous les articles.
 
