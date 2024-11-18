@@ -4,6 +4,6 @@
 
 la page **index.php** liste tous les
  articles.
- Création d'un fourmulaire pour ajouter un article 
+Création d'un fourmulaire pour ajouter un article 
  
  Une branche **git** a été crée pour chaque fontcionalité
