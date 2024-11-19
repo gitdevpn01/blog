@@ -1,0 +1,32 @@
+services:
+  server-web:
+    image: php:8.2.25-apache
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "8000:80"
+    command: bash -c "docker-php-ext-install pdo pdo_mysql && apachectl -D FOREGROUND"
+  
+  mysql:
+    image: mysql:9.1.0
+    environment:
+      MYSQL_ROOT_PASSWORD: monpassroot
+      MYSQL_DATABASE: blog_db
+      MYSQL_USER: toto
+      MYSQL_PASSWORD: totopass
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: toto
+      PMA_PASSWORD: totopass
+    ports:
+      - "8001:80"
+    depends_on:
+      - mysql
+
+volumes:
+  mysql-data:
