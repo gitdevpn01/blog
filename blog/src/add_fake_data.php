@@ -1,4 +1,5 @@
 <?php
+require "connect.php";
 require_once '../vendor/autoload.php';
 
 $faker = Faker\Factory::create('fr_FR');
@@ -9,11 +10,6 @@ $faker = Faker\Factory::create('fr_FR');
 //     echo "<hr>";
 // endfor;
 
-try {
-    $connexion = new PDO("mysql:host=localhost;dbname=blog_db", "root", "");
-} catch (PDOException $error) {
-    echo "Erreur s'est produit lors de la connexion à votre base de donnée : " . $error->getMessage();
-}
 $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $stm = $connexion->prepare("INSERT INTO article (title,content) VALUES (:title, :content) ");
 

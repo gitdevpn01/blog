@@ -1,18 +1,14 @@
 <?php
-try {
-    $id = $_GET['id'];
+require "connect.php";
 
-    $connexion = new PDO("mysql:host=localhost;dbname=blog_db", "root", "");
-    $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$id = $_GET['id'];
 
-    $stmt = $connexion->prepare('DELETE FROM article WHERE id = :id');
-    $stmt->bindParam(':id',$id);
-    $stmt->execute();
+$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    header("HX-Refresh: true");
+$stmt = $connexion->prepare('DELETE FROM article WHERE id = :id');
+$stmt->bindParam(':id', $id);
+$stmt->execute();
 
-} catch (PDOException $error) {
-    echo "Erreur de connextion à la base de donnée : " . $error->getMessage();
-}
+header("HX-Refresh: true");
 
 $connexion = null;

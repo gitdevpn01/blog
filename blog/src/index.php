@@ -1,5 +1,5 @@
 <?php
-$connexion = new PDO("mysql:host=mysql;dbname=blog_db", "root", "monpassroot");
+require "connect.php";
 
 $result = $connexion->query('SELECT * FROM article ORDER BY id DESC');
 
