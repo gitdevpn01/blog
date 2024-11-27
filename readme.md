@@ -1,0 +1,4 @@
+- Ouvrir Docker Desktop
+- Se rendre dans son repertoire `~/Documents/php` avec **VSCODE**
+- Lancer sa stack `docker compose up -d`
+- Aller à l'adresse `http://localhost:8000`
